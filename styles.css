@@ -178,3 +178,23 @@ input[type="checkbox"] {
   font-weight: 500;
   color: var(--white);
 }
+
+/* Success Message Styles */
+.success-message {
+  position: fixed;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(-200%);
+  background-color: var(--white);
+  color: var(--text-dark);
+  padding: 1rem 2rem;
+  border-radius: 5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  font-weight: 600;
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.success-message.show {
+  transform: translateX(-50%) translateY(0);
+}

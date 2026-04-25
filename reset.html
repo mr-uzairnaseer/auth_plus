@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Reset Password | Auth</title>
+  </head>
+  <body>
+    <div id="success-msg" class="success-message">Password Reset Successful!</div>
+    <div class="container">
+      <form action="/" class="login__form" onsubmit="event.preventDefault(); showSuccess();">
+        <h1>New Password</h1>
+        <div class="input__row">
+          <span><i class="ri-lock-2-line"></i></span>
+          <div class="input__group">
+            <input type="password" placeholder=" " required />
+            <label>New Password</label>
+          </div>
+        </div>
+        <div class="input__row">
+          <span><i class="ri-lock-check-line"></i></span>
+          <div class="input__group">
+            <input type="password" placeholder=" " required />
+            <label>Confirm Password</label>
+          </div>
+        </div>
+        <button class="login__btn">Update Password</button>
+      </form>
+    </div>
+    <script>
+      function showSuccess() {
+        const msg = document.getElementById('success-msg');
+        msg.classList.add('show');
+        setTimeout(() => {
+          msg.classList.remove('show');
+          window.location.href = 'index.html';
+        }, 3000);
+      }
+    </script>
+  </body>
+</html>

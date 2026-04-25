@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Forgot Password | Auth</title>
+  </head>
+  <body>
+    <div id="success-msg" class="success-message">Reset link sent! Check your email.</div>
+    <div class="container">
+      <form action="/" class="login__form" onsubmit="event.preventDefault(); showSuccess();">
+        <h1>Recover</h1>
+        <p style="color: var(--white); text-align: center; margin-bottom: 2rem; font-size: 0.9rem; opacity: 0.8;">
+            Enter your email address and we'll send you a link to reset your password.
+        </p>
+        <div class="input__row">
+          <span><i class="ri-mail-line"></i></span>
+          <div class="input__group">
+            <input type="email" placeholder=" " required />
+            <label>Email Address</label>
+          </div>
+        </div>
+        <button class="login__btn">Send Link</button>
+        <div class="register">
+          Remembered password? <a href="index.html">Back to Login</a>
+        </div>
+      </form>
+    </div>
+    <script>
+      function showSuccess() {
+        const msg = document.getElementById('success-msg');
+        msg.classList.add('show');
+        setTimeout(() => {
+          msg.classList.remove('show');
+          window.location.href = 'reset.html';
+        }, 3000);
+      }
+    </script>
+  </body>
+</html>
